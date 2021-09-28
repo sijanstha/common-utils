@@ -3,6 +3,7 @@ package oauth
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 
 	"net/http"
 	"strconv"
@@ -19,7 +20,7 @@ const (
 )
 
 var (
-	oauthAPIURL = "http://localhost:8081/oauth/access_token"
+	oauthAPIURL = os.Getenv("oauth_ms_url")
 )
 
 type accessToken struct {
