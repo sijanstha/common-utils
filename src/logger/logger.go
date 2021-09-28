@@ -38,6 +38,11 @@ func Info(msg string, tags ...zap.Field) {
 	log.Sync()
 }
 
+func Debug(msg string, tags ...zap.Field) {
+	log.Debug(msg, tags...)
+	log.Sync()
+}
+
 func Error(msg string, err error, tags ...zap.Field) {
 	tags = append(tags, zap.Error(err))
 	log.Error(msg, tags...)
